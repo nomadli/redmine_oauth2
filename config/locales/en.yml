@@ -1,0 +1,6 @@
+en:
+  notice_unable_to_obtain_oauth2: "Unable to obtain credentials from oauth2."
+  notice_domain_not_allowed: "You can not login using %{domain} domain."
+  notice_access_denied: "You must allow to use you oauth2 credentials to enter this site."
+  login_via_oauth2: "Login via oauth2"
+  oauth2_setting_err: "Host && Auth && Token && Info && AppID && Secret && Email must set"

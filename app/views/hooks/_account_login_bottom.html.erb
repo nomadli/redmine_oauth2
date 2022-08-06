@@ -1,0 +1,10 @@
+<%= stylesheet_link_tag 'buttons', :plugin => 'redmine_oauth2' %>
+
+<% if Setting.plugin_redmine_oauth2[:oauth_authentification] %>
+  <%= link_to oauth_oauth2_path(:back_url => back_url) do %>
+    <%= button_tag :class => 'button-login' do %>
+      <%= image_tag('/plugin_assets/redmine_oauth2/images/oauth2_icon.png', :class => 'button-login-icon', :alt => l(:login_via_oauth2)) %>
+      <%= content_tag :div, l(:login_via_oauth2), :class => 'button-login-text' %>
+    <% end %>
+  <% end %>
+<% end %>

@@ -1,0 +1,44 @@
+<p>
+  <label>Oauth2.0 Host(required):</label>
+  <%= text_field_tag 'settings[oauth2_host]', @settings[:oauth2_host] %>
+</p>
+<p>
+  <label>Oauth2.0 Auth Path(required):</label>
+  <%= text_field_tag 'settings[oauth2_auth]', @settings[:oauth2_auth] %>
+</p>
+<p>
+  <label>Oauth2.0 Token Path(required):</label>
+  <%= text_field_tag 'settings[oauth2_token]', @settings[:oauth2_token] %>
+</p>
+<p>
+  <label>Oauth2.0 User Info Path(required):</label>
+  <%= text_field_tag 'settings[oauth2_info]', @settings[:oauth2_info] %>
+</p>
+<p>
+  <label>Client ID(required):</label>
+  <%= text_field_tag 'settings[client_id]', @settings[:client_id] %>
+</p>
+<p>
+  <label>Client Secret(required):</label>
+  <%= text_field_tag 'settings[client_secret]', @settings[:client_secret] %>
+</p>
+<p>
+  <label>UserInfo Email JSON key(required):</label>
+  <%= text_field_tag 'settings[email_key]', @settings[:email_key] %>
+</p>
+<p>
+  <label>UserInfo UID JSON key(optional):</label>
+  <%= text_field_tag 'settings[uid_key]', @settings[:uid_key] %>
+</p>
+<p>
+  <label>UserInfo First Name JSON key(optional):</label>
+  <%= text_field_tag 'settings[fname_key]', @settings[:fname_key] %>
+</p>
+<p>
+  <label>UserInfo Last Name JSON key(optional):</label>
+  <%= text_field_tag 'settings[lname_key]', @settings[:lname_key] %>
+</p>
+<p>
+  <label>Oauth authentification:</label>
+  <%= check_box_tag "settings[oauth_authentification]", true, @settings[:oauth_authentification] %>
+</p>
