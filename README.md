@@ -1,4 +1,4 @@
-## This is a general oauth 2.0 login redmine plug-in
+## This is a general oauth 2.0 login redmine5.0 plug-in
 
 ![](doc/img/settings.png)
 ![](doc/img/login.png)
@@ -6,7 +6,7 @@
 
 ## install 
 ```console
-apt-get install -y make gcc git
+apt-get install -y make gcc git | yum install -y make gcc git
 cd x/redmine/plugins
 git clone https://github.com/nomadli/redmine_oauth2
 cd x/redmine
