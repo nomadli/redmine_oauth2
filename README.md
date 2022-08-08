@@ -1,3 +1,9 @@
+## This is a general oauth 2.0 login redmine plug-in
+
+![](./doc/img/settings.png)
+![](./doc/img/login.png)
+
+
 ## install 
 ```console
 apt-get install -y make gcc git
