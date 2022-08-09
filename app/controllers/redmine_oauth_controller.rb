@@ -32,15 +32,8 @@ class RedmineOauthController < AccountController
         
         token = oauth_client.auth_code.get_token(params[:code], :redirect_uri => oauth2_callback_url)
         #Rails.logger.info "o=> code #{token}"
-            
-        info_url = ""
-        if settings[:oauth2_host][-1] == "/" || settings[:oauth2_info][0] == "/"
-            info_url = sprintf('%s%s', settings[:oauth2_host], settings[:oauth2_info])
-        else
-            info_url = sprintf('%s/%s', settings[:oauth2_host], settings[:oauth2_info])
-        end
-        result = token.get(info_url)
-      
+
+        result = token.get(settings[:oauth2_info])
         info = JSON.parse(result.body)
         if info && info[settings[:email_key]]
             try_to_login info
