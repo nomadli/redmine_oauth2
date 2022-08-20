@@ -23,6 +23,7 @@ Redmine::Plugin.register :redmine_oauth2 do
         :client_id => "",
         :client_secret => "",
         :oauth_autentification => false,
+        :info_root => [],
         :email_key => "",
         :uid_key => "",
         :fname_key => "",

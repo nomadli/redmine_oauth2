@@ -35,6 +35,17 @@ class RedmineOauthController < AccountController
 
         result = token.get(settings[:oauth2_info])
         info = JSON.parse(result.body)
+
+        root_path = settings[:info_root].split(",")
+        root_path.each_with_index do |key, i|
+            if !info
+                flash[:error] = l(:notice_access_denied)
+                redirect_to signin_path
+                return
+            end
+            info = info[key]
+        end
+
         if info && info[settings[:email_key]]
             try_to_login info
         else

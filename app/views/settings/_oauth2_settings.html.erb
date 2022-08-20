@@ -23,6 +23,10 @@
   <%= text_field_tag 'settings[client_secret]', @settings[:client_secret] %>
 </p>
 <p>
+  <label>UserInfo JSON Path (optional): exp: data,info</label>
+  <%= text_field_tag 'settings[info_root]', @settings[:info_root] %>
+</p>
+<p>
   <label>UserInfo Email JSON key(required):</label>
   <%= text_field_tag 'settings[email_key]', @settings[:email_key] %>
 </p>
