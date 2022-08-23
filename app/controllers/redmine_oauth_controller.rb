@@ -30,7 +30,7 @@ class RedmineOauthController < AccountController
             return
         end
         
-        token = oauth_client.auth_code.get_token(params[:code], :redirect_uri => oauth2_callback_url)
+        token = oauth_client.auth_code.get_token(params[:code], {redirect_uri:oauth2_callback_url, client_id:settings[:client_id], client_secret:settings[:client_secret]})
         #Rails.logger.info "o=> code #{token}"
 
         result = token.get(settings[:oauth2_info])
@@ -103,10 +103,12 @@ class RedmineOauthController < AccountController
                 account_pending
             end
         end
-        
-        redirect_to(home_url) && return unless Setting.self_registration?
 
-        Rails.logger.info "o=> regiest type #{Setting.self_registration}"
+        if !Setting.self_registration && !settings[:auto_registration]
+            redirect_to(home_url)
+            return
+        end
+
         attrs = {
             :firstname => fname,
             :lastname => lname,
