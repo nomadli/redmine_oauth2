@@ -93,6 +93,7 @@ class RedmineOauthController < AccountController
         user = User.find_by_login(login)
         if user && !user.new_record?
             if user.active?
+                set_autologin_cookie(user)
                 successful_authentication(user)
                 return
             end
